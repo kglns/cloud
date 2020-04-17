@@ -27,14 +27,14 @@ git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
 echo 'export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"' >> ~/.bashrc
 exec $SHELL
 
-rbenv install $RUBY_VERSION
-rbenv global $RUBY_VERSION
+rbenv install "$RUBY_VERSION"
+rbenv global "$RUBY_VERSION"
 
 ruby -v
 
 # Install bundler and rails
 gem install bundler
-gem install rails -v "RAILS_VERSION"
+gem install rails -v "$RAILS_VERSION"
 
 rbenv rehash
 
