@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# Change these variables to your own
 DOMAIN="example.com"
 REPLACE="example\.com"
 EMAIL="example@gmail.com"
@@ -8,6 +9,7 @@ EMAIL="example@gmail.com"
 apt-get update
 apt-get --yes install python-certbot-apache
 
+# Assumes that apache2 is already installed
 cd /etc/apache2/sites-available
 cat 000-default.conf | sed -E "s/#ServerName\ www\.example\.com/ServerName\ $REPLACE/" > $DOMAIN.conf
 
